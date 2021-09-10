@@ -10,15 +10,15 @@ abstract class ILoginValidationResults<T> {
 }
 
 class UseLoginViewModel {
-  LoginState state;
-  String dayOfMonth;
-  Function(String text) onEmailChange;
-  Function(String text) onPasswordChange;
-
   UseLoginViewModel({
     required this.state,
     required this.dayOfMonth,
     required this.onEmailChange,
     required this.onPasswordChange,
   });
+
+  LoginState state;
+  String dayOfMonth;
+  Function(String text) onEmailChange;
+  Function(String text) onPasswordChange;
 }

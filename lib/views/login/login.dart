@@ -23,14 +23,14 @@ class LoginScreen extends HookWidget {
             ? EdgeInsets.only(
                 left: MediaQuery.of(context).size.width / 4,
                 right: MediaQuery.of(context).size.width / 4,
-                top: 20.0)
-            : EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+                top: 20)
+            : EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
               const SizedBox(
-                height: 36.0,
+                height: 36,
               ),
               Text(
                 vm.dayOfMonth,
@@ -40,7 +40,7 @@ class LoginScreen extends HookWidget {
                     color: Colors.black54),
               ),
               const SizedBox(
-                height: 36.0,
+                height: 36,
               ),
               const Text(
                 "email",
@@ -50,7 +50,7 @@ class LoginScreen extends HookWidget {
                     color: Colors.black54),
               ),
               const SizedBox(
-                height: 16.0,
+                height: 16,
               ),
               const Text(
                 "password",
@@ -60,11 +60,11 @@ class LoginScreen extends HookWidget {
                     color: Colors.black54),
               ),
               const SizedBox(
-                height: 20.0,
+                height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 16.0, horizontal: 32.0),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
                 child: Column(
                   children: [
                     InputComponent(
@@ -75,7 +75,7 @@ class LoginScreen extends HookWidget {
                         labelHint: "pls input email",
                         errorText: vm.state.emailError ?? null),
                     const SizedBox(
-                      height: 20.0,
+                      height: 20,
                     ),
                     InputComponent(
                         onChanged: vm.onPasswordChange,
@@ -85,7 +85,7 @@ class LoginScreen extends HookWidget {
                         labelHint: "pls input password",
                         errorText: vm.state.passwordError ?? null),
                     const SizedBox(
-                      height: 40.0,
+                      height: 40,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,

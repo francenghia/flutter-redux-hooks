@@ -3,7 +3,7 @@ import 'package:flutter_redux_hooks/core/utils/regexp_pattern.dart';
 class ValidateUtils {
   /// check if string [str] is Email
   static bool validateEmail(String value) {
-    RegExp regex = RegExp(RegExpPattern.emailRegExpPattern.toString());
+    final regex = RegExp(RegExpPattern.emailRegExpPattern.toString());
     if (regex.hasMatch(value)) {
       return true;
     }
@@ -20,7 +20,7 @@ class ValidateUtils {
 
   /// check if string [str] is phone number
   static bool validatePhone(String value) {
-    RegExp regex = RegExp(RegExpPattern.mobileRegExpPattern.toString());
+    final regex = RegExp(RegExpPattern.mobileRegExpPattern.toString());
     if (regex.hasMatch(value)) {
       return true;
     }
@@ -28,18 +28,18 @@ class ValidateUtils {
   }
 
   /// check if the string contains the seed
-  static bool contains(String str, seed) {
+  static bool contains(String str, dynamic seed) {
     return str.indexOf(seed.toString()) >= 0;
   }
 
   /// check if string [str] matches the [pattern].
   bool matches(String str, String pattern) {
-    RegExp re = new RegExp(pattern);
+    final re = new RegExp(pattern);
     return re.hasMatch(str);
   }
 
   /// check if the string matches the comparison
-  bool equals(String? str, comparison) {
+  bool equals(String? str, dynamic comparison) {
     return str == comparison.toString();
   }
 

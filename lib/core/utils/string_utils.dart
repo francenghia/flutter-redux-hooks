@@ -16,7 +16,7 @@ class StringUtils {
     try {
       return value.substring(0, -1 + index) +
           value.substring(index, value.length);
-    } catch (e) {
+    } on Exception catch (_) {
       return value;
     }
   }
@@ -61,7 +61,7 @@ class StringUtils {
 
     try {
       result = value.substring(0, length) + symbol;
-    } catch (e) {}
+    } on Exception catch (_) {}
     return result;
   }
 
@@ -69,7 +69,8 @@ class StringUtils {
   ///
   ///[length]: length of string,
   ///
-  ///[alphabet]:(boolean) add alphabet to string[uppercase]ABCD and [lowercase]abcd,
+  ///[alphabet]:(boolean) add alphabet
+  ///to string[uppercase]ABCD and [lowercase]abcd,
   ///
   ///[numeric]:(boolean) add integers to string like 3622737
   ///
@@ -87,16 +88,20 @@ class StringUtils {
     final res = StringBuffer();
 
     do {
-      res.write(
-          randomizer(alphabet, numeric, lowercase, uppercase, special, from));
+      res.write(randomizer(
+          alphabet: alphabet,
+          numeric: numeric,
+          lowercase: lowercase,
+          uppercase: uppercase,
+          special: special,
+          from: from));
     } while (res.length < length);
 
-    var possible = res.toString().split('');
-    possible.shuffle(); //all possible combinations shuffled
-    var result = [];
+    final possible = res.toString().split('')..shuffle();
+    final result = [];
 
     for (var i = 0; i < length; i++) {
-      var randomNumber = Random().nextInt(length);
+      final randomNumber = Random().nextInt(length);
       result.add(possible[randomNumber]);
     }
 
@@ -104,12 +109,17 @@ class StringUtils {
   }
 
   ///randomizer
-  static String randomizer(bool alphabet, bool numeric, bool lowercase,
-      bool uppercase, bool special, String from) {
-    var a = 'ABCDEFGHIJKLMNOPQRXYZ';
-    var la = 'abcdefghijklmnopqrxyz';
-    var b = '0123456789';
-    var c = '~^!@#\$%^&*;`(=?]:[.)_+-|\{}';
+  static String randomizer(
+      {required bool alphabet,
+      required bool numeric,
+      required bool lowercase,
+      required bool uppercase,
+      required bool special,
+      required String from}) {
+    final a = 'ABCDEFGHIJKLMNOPQRXYZ';
+    final la = 'abcdefghijklmnopqrxyz';
+    final b = '0123456789';
+    final c = '~^!@#\$%^&*;`(=?]:[.)_+-|\{}';
     var result = '';
 
     if (alphabet) {

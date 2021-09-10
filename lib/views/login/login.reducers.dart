@@ -1,8 +1,7 @@
 import 'package:flutter_redux_hooks/views/login/login.actions.dart';
 import 'package:flutter_redux_hooks/views/login/login.state.dart';
+import 'package:flutter_redux_hooks/views/login/login.validate.dart';
 import 'package:redux/redux.dart';
-
-import 'login.validate.dart';
 
 LoginState loginReducers(LoginState state, LoginActions? action) {
   final appReducer = combineReducers<LoginState>([
@@ -15,21 +14,23 @@ LoginState loginReducers(LoginState state, LoginActions? action) {
 
 LoginState _setEmailChange(LoginState state, SetEmailAction action) {
   final newState = state.clone();
-  String? emailError =
+  final emailError =
       LoginValidationResults().validateEmail(action.email).errorMessage;
 
-  newState.email = action.email;
-  newState.emailError = emailError;
+  newState
+    ..email = action.email
+    ..emailError = emailError;
   return newState;
 }
 
 LoginState _setPasswordChange(LoginState state, SetPasswordAction action) {
   final newState = state.clone();
 
-  String? passwordError =
+  final passwordError =
       LoginValidationResults().validatePassword(action.password).errorMessage;
 
-  newState.password = action.password;
-  newState.passwordError = passwordError;
+  newState
+    ..password = action.password
+    ..passwordError = passwordError;
   return newState;
 }

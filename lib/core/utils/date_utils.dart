@@ -123,20 +123,20 @@ class DateUtils {
   ///
   /// [day] DateTime
   static DateTime _firstDayOfWeek(DateTime day) {
-    day = DateTime.utc(day.year, day.month, day.day, 12);
+    final newDay = DateTime.utc(day.year, day.month, day.day, 12);
 
-    final decreaseNum = day.weekday - 1;
-    return day.subtract(Duration(days: decreaseNum));
+    final decreaseNum = newDay.weekday - 1;
+    return newDay.subtract(Duration(days: decreaseNum));
   }
 
   /// Returns a [DateTime] _lastDayOfWeek
   ///
   /// [day] DateTime
   static DateTime _lastDayOfWeek(DateTime day) {
-    day = DateTime.utc(day.year, day.month, day.day, 12);
+    final newDay = DateTime.utc(day.year, day.month, day.day, 12);
 
-    final increaseNum = day.weekday - 1;
-    return day.add(Duration(days: 7 - increaseNum));
+    final increaseNum = newDay.weekday - 1;
+    return newDay.add(Duration(days: 7 - increaseNum));
   }
 
   /// Returns a [DateTime] for each day the given range.

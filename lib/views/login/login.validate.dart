@@ -1,8 +1,7 @@
 import 'package:flutter_redux_hooks/core/base/validation/validation_result.dart';
 import 'package:flutter_redux_hooks/core/utils/validate_utils.dart';
-
-import 'login.state.dart';
-import 'login.types.dart';
+import 'package:flutter_redux_hooks/views/login/login.state.dart';
+import 'package:flutter_redux_hooks/views/login/login.types.dart';
 
 class LoginValidationResults extends ILoginValidationResults {
   @override
@@ -28,8 +27,8 @@ class LoginValidationResults extends ILoginValidationResults {
 
   @override
   bool validateForm(LoginState state) {
-    bool emailValid = validateEmail(state.email).isValid;
-    bool passwordValid = validatePassword(state.password).isValid;
+    final emailValid = validateEmail(state.email).isValid;
+    final passwordValid = validatePassword(state.password).isValid;
 
     return emailValid && passwordValid;
   }

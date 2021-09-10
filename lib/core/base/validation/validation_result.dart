@@ -1,8 +1,8 @@
 class ValidationResult {
+  ValidationResult({required this.isValid, required this.errorMessage});
+
   bool isValid;
   String? errorMessage;
-
-  ValidationResult({required this.isValid, required this.errorMessage});
 
   static ValidationResult ok() {
     return ValidationResult(isValid: true, errorMessage: null);
