@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: [ ubuntu-latest, windows-latest, macos-latest ]
+        operating-system: [ windows-latest ]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
