@@ -61,9 +61,7 @@ class StringUtils {
 
     try {
       result = value.substring(0, length) + symbol;
-    } catch (e) {
-      print(e.toString());
-    }
+    } catch (e) {}
     return result;
   }
 
@@ -86,13 +84,14 @@ class StringUtils {
       uppercase = true,
       lowercase = true,
       String from = ''}) {
-    var res = '';
+    final res = StringBuffer();
 
     do {
-      res += randomizer(alphabet, numeric, lowercase, uppercase, special, from);
+      res.write(
+          randomizer(alphabet, numeric, lowercase, uppercase, special, from));
     } while (res.length < length);
 
-    var possible = res.split('');
+    var possible = res.toString().split('');
     possible.shuffle(); //all possible combinations shuffled
     var result = [];
 

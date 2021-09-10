@@ -45,7 +45,7 @@ class ValidateUtils {
 
   /// check if the string [str] is null
   bool isNull(String? str) {
-    return str == null || str.length == 0;
+    return str == null || str.isEmpty;
   }
 
   /// check if the string [str] is lowercase

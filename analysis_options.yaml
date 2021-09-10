@@ -1,0 +1,21 @@
+linter:
+  rules:
+    - avoid_print
+    - avoid_catching_errors
+    - avoid_empty_else
+    - always_declare_return_types
+    - annotate_overrides
+    - camel_case_types
+    - null_closures
+    - void_checks
+    - use_string_buffers
+    - unsafe_html
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_is_not_operator
+    - prefer_iterable_whereType
+    - avoid_dynamic_calls
+
+analyzer:
+  errors:
+    camel_case_types: error
