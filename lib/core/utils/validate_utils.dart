@@ -18,7 +18,7 @@ class ValidateUtils {
     return false;
   }
 
-  /// check if string [str] is phone
+  /// check if string [str] is phone number
   static bool validatePhone(String value) {
     RegExp regex = RegExp(RegExpPattern.mobileRegExpPattern.toString());
     if (regex.hasMatch(value)) {
