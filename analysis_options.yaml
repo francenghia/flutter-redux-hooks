@@ -3,6 +3,7 @@ linter:
     - avoid_print
     - avoid_catching_errors
     - avoid_empty_else
+    - avoid_init_to_null
     - always_declare_return_types
     - annotate_overrides
     - camel_case_types
@@ -15,7 +16,12 @@ linter:
     - prefer_is_not_operator
     - prefer_iterable_whereType
     - avoid_dynamic_calls
+    - sort_pub_dependencies
+    - prefer_foreach
+    - prefer_const_constructors_in_immutables
 
 analyzer:
+  strong-mode:
+    implicit-casts: false
   errors:
     camel_case_types: error

@@ -33,7 +33,7 @@ class ValidateUtils {
   }
 
   /// check if string [str] matches the [pattern].
-  bool matches(String str, pattern) {
+  bool matches(String str, String pattern) {
     RegExp re = new RegExp(pattern);
     return re.hasMatch(str);
   }

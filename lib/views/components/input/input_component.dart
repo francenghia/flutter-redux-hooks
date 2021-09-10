@@ -12,7 +12,7 @@ class InputComponent extends HookWidget {
   final TextEditingController? customController;
   final Function(String text) onChanged;
 
-  InputComponent(
+  const InputComponent(
       {required this.labelTitleInput,
       required this.keyboardType,
       required this.isFieldPassword,

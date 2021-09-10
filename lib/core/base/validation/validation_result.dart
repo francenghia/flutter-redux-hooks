@@ -1,6 +1,6 @@
 class ValidationResult {
   bool isValid;
-  dynamic errorMessage;
+  String? errorMessage;
 
   ValidationResult({required this.isValid, required this.errorMessage});
 

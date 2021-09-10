@@ -78,11 +78,11 @@ class StringUtils {
   ///[from]:where you want to generate string from
   ///
   static String generateRandomString(int length,
-      {alphabet = true,
-      numeric = true,
-      special = true,
-      uppercase = true,
-      lowercase = true,
+      {bool alphabet = true,
+      bool numeric = true,
+      bool special = true,
+      bool uppercase = true,
+      bool lowercase = true,
       String from = ''}) {
     final res = StringBuffer();
 
