@@ -1,6 +1,6 @@
 # flutter_redux_hooks
 
-A new Flutter project.
+Run app: run gitbase -> sh ./bin/install_app.sh
 
 ## Getting Started
 
