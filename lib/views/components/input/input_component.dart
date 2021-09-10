@@ -32,7 +32,7 @@ class InputComponent extends HookWidget {
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.grey, width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(6))),
+                  borderRadius: const BorderRadius.all(Radius.circular(6))),
               border: OutlineInputBorder(),
               hintText: labelHint,
               labelText: labelTitleInput,
