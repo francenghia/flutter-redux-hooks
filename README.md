@@ -2,6 +2,10 @@
 
 Run app: run gitbase -> sh ./bin/install_app.sh
 
+ignoure hooks:
++ git commit --no-verify
++ git push --no-verify
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
